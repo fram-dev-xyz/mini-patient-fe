@@ -34,7 +34,7 @@
         <td>{{patient.fullName}}</td>
         <td>{{patient.dateOfBirth}}</td>
         <td>{{patient.gender}}</td>
-        <td>{{patient.address}}</td>
+        <td>{{ patient.address }}, {{ patient.suburbName }}, {{ patient.stateName }} {{ patient.postcode }}</td>
         <td>
           <button (click)="viewPatient(patient.id)">View</button>
           <button (click)="toggleEditForm(patient.id)">Edit</button>
@@ -99,6 +99,7 @@
     }
     
   </select></p>
+  <p><strong>Postcode:</strong><input type="text" placeholder="Postcode" [(ngModel)]="newPatient.postcode"></p>
   <p><strong>Phone Number:</strong><input type="text" placeholder="Phone No" [(ngModel)]="newPatient.phoneNumber"></p>
   <button (click)="createPatient()">Save</button>
     @if (showAddForm) {
